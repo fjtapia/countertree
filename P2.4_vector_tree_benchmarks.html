@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta content="HTML Tidy for Windows (vers 1st November 2003), see www.w3.org" name="generator" />
+    <title>Boost C++ Libraries</title>
+    <link type="image/ico" href="http://www.boost.org/favicon.ico" rel="icon" />
+    <link href="http://www.boost.org/style-v2/section-welcome.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="files/code.css" />
+    <!--[if IE 7]> <style type="text/css"> body { behavior: url(http://www.boost.org/style-v2/csshover3.htc); } </style> <![endif]-->
+    <meta content="mpr2HgFpodnbF_8fv4qXd9roIClVwtX3C-Kd3F6r61w" name="google-site-verification" />
+  </head>
+  <!--
+Note: Editing website content is documented at:http://www.boost.org/development/website_updating.html-->
+  <!--*******************************************************************************************************  -->
+  <!--                                       B O D Y                                                           -->
+  <!--*******************************************************************************************************  --> <body>
+    <div id="heading">
+      <div class="heading-inner">
+        <div class="heading-placard"></div>
+        <h1 class="heading-title"> <a href="http://www.boost.org/"> <img class="heading-logo" alt="Boost C++ Libraries"
+              src="http://www.boost.org//gfx/space.png" /> <span class="heading-boost">Boost</span> <span class="heading-cpplibraries">C++
+              Libraries</span>
+            <!-- Removing the next line, deletes the Preliminary text in the decoration od the top odf the page --> <img
+              style="width: 300px; height: 80px;" alt="Preliminary" src="img/preliminary.gif" /> </a></h1>
+        <p class="heading-quote"> <q>...one of the most highly regarded and expertly designed C++ library projects in
+            the world.</q> <span class="heading-attribution">— <a class="external" href="http://www.gotw.ca/">Herb
+              Sutter</a> and <a class="external" href="http://en.wikipedia.org/wiki/Andrei_Alexandrescu">Andrei
+              Alexandrescu</a>, <a class="external" href="http://safari.awprofessional.com/?XmlId=0321113586">C++
+              Coding Standards</a></span></p>
+      </div>
+      <!--  div heading-inner--> </div>
+    <!-- - div  heading -->
+    <div class="clear"></div>
+    <!--*******************************************************************************************************  -->
+    <!--                      T E X T   O F      T H E     P A G E                                               -->
+    <!--*******************************************************************************************************  -->
+    <div class="cuerpo_central">
+      <div class="cuerpo_texto"> <br />
+        <br />
+        <br />
+        <span style="font-size: 32pt;"> <span style="font-weight: bold; color: black;"> <a href="index.html">The [
+              Counter Tree + Suballocator ] Library</a></span> </span><br />
+        <div>
+          <div class="author">
+            <h3 class="author"><br />
+              <span class="firstname"></span></h3>
+            <h3 style="font-style: italic;" class="author"><span class="firstname">Francisco Jose Tapia</span>  
+              Copyright © 2010-2012 Francisco Jose Tapia</h3>
+          </div>
+        </div>
+        <div>
+          <div class="legalnotice">
+            <p><span style="font-style: italic;">Distributed under the Boost Software License, Version 1.0. (See
+                accompanying file LICENSE_1_0.txt or copy at </span><a style="font-style: italic;" href="file:///LICENSE_1_0.txt"
+                target="_top"> http://www.boost.org/LICENSE_1_0.txt </a><span style="font-style: italic;">)</span> </p>
+          </div>
+        </div>
+        <br />
+        <div class="caja_menu"> <br />
+          <p><span style="font-size: 18pt;font-weight: bold; color: black;">Table of Contents</span></p>
+          <br />
+              <a href="P2.0_vector_tree.html#countertree">2.- Counter Trees with unordered elements ( <span class="texto_codigo">countertree::vector_tree</span>)</a>
+          <br />
+          <div style="margin-left: 40px;"> <a href="P2.0_vector_tree.html#description">2.1.- Description</a><br />
+            <a href="P2.2_vector_tree_functions.html#functions">2.2.- Functions</a><br />
+            <a href="P2.3_vector_tree_examples.html#examples">2.3.- Examples</a><br />
+            <a href="P2.4_vector_tree_benchmarks.html#benchmarks">2.4.- Benchmarks</a><br />
+            <br />
+          </div>
+        </div>
+        <br />
+        <br />
+        <!--*******************************************************************************************************  -->
+        <!--                                          B E N C H M A R K S                                            -->
+        <!--*******************************************************************************************************  -->
+        <a name="benchmarks"></a> <span style="font-size: 16pt;font-weight: bold; color: black;">2.4.- Benchmarks  <small>countertree::vector_tree</small>
+          vs <small> std::deque</small></span> <br />
+        <br />
+        In order to evaluate the performance, we compare the <span style="font-weight: bold;">countertree::vector_tree</span>
+        with the STL class <span style="font-weight: bold;">std::deque</span>, which is a vector with fast insert at
+        the beginning and the end. <br />
+        <br />
+        <ul style="margin-left: 40px;">
+          <li> In the first test the elements are integer, and there are two test : insert/delete in the first or the
+            last position and insert/delete in random positions.The test is done with structures with 100 elements
+            anwith 1000000 elements </li>
+          <li> In the second test the elements are a set of integers with 100 elements, and there are two test :
+            insert/delete in the first or the last position and insert/delete in random positions.The test is done with
+            structures with 100 elements anwith 10000 elements </li>
+        </ul>
+        <p> </p>
+        The test had been done with  GCC 4.6 (64 bits) and run on a QuadCore 2.4 GHz with the C++0x actived (without
+        this option the deque times of the second test are 40 times bigger).
+        <p> </p>
+        <img align="justify" alt="Example of Allocator" src="img/benchmark_vector_tree_linux_2.png" /> <br />
+        <br />
+        <img align="justify" alt="Example of Allocator" src="img/benchmark_vector_tree_linux.png" /> <br />
+        <br />
+    <!--*******************************************************************************************************  -->
+    <!--                             I C O N O S   P A R T E   I N F E R I O R                                  -->
+    <!--*******************************************************************************************************  -->    
+        <a title="set map" href="P3.0_set_map.html" style="float:right"><img alt="next page" src="img/next.png" /></a> 
+        <a title="home page" href="P2.0_vector_tree.html" style="float:right"><img alt="go to head of the page" src="img/up.png" /></a> 
+        <a title="vector_tree examples" href="P2.3_vector_tree_examples.html" style="float:right"><img src="img/prev.png" alt="previous page" /></a> 
+        <a title="home" href="index.html" style="float:right"><img  src="img/home.png" alt="home page" /></a>
+        
+        <br />
+      </div>
+    </div>
+    <!--*******************************************************************************************************  -->
+    <!--                    T A B L A    I N F E R I O R   D E   L A    P A G I N A                              -->
+    <!--*******************************************************************************************************  -->
+    <table width="100%" xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision">
+      <tbody>
+        <tr>
+          <td align="left">
+            <p><small>Last revised: September  08, 2010 at 21:42:41 GMT</small></p>
+          </td>
+          <td align="right"> <br />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <div class="box-bottom"></div>
+    <!-- div cuerpo_texto -->
+    <div class="clear"></div>
+    <!-- div cuerpo central -->
+    <!--  div body -->
+    <!--*******************************************************************************************************  -->
+    <!--                                      F O O T E R                                                        -->
+    <!--*******************************************************************************************************  -->
+    <div id="footer">
+      <div id="footer-left">
+        <div id="copyright">
+          <p>Copyright Francisco Jose Tapia 2010 -2012.</p>
+        </div>
+        <div id="license">
+          <p>Distributed under the <a class="internal" href="/LICENSE_1_0.txt">Boost Software License, Version 1.0</a>.</p>
+        </div>
+      </div>
+      <div id="footer-right">
+        <div id="banners">
+          <p id="banner-xhtml"> <a class="external" href="http://validator.w3.org/check?uri=referer">XHTML 1.0</a></p>
+          <p id="banner-css"> <a class="external" href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a></p>
+          <p id="banner-osi"> <a class="external" href="http://www.opensource.org/docs/definition.php">OSI Certified</a></p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </body>
+</html>

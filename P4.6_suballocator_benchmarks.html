@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="generator" content="HTML Tidy for Windows (vers 1st November 2003), see www.w3.org" />
+    <title>Boost C++ Libraries</title>
+    <link rel="icon" href="http://www.boost.org/favicon.ico" type="image/ico" />
+    <link rel="stylesheet" type="text/css" href="http://www.boost.org/style-v2/section-welcome.css" />
+    <link href="files/code.css" type="text/css" rel="stylesheet" />
+    <!--[if IE 7]> <style type="text/css"> body { behavior: url(http://www.boost.org/style-v2/csshover3.htc); } </style> <![endif]-->
+    <meta name="google-site-verification" content="mpr2HgFpodnbF_8fv4qXd9roIClVwtX3C-Kd3F6r61w" />
+  </head>
+  <!-- Note: Editing website content is documented at:http://www.boost.org/development/website_updating.html-->
+  <!--*******************************************************************************************************-->
+  <!--                                           B O D Y                                                     -->
+  <!--*******************************************************************************************************--> <body>
+    <div id="heading">
+      <div class="heading-inner">
+        <div class="heading-placard"></div>
+        <h1 class="heading-title"> <a href="http://www.boost.org/"> <img src="http://www.boost.org//gfx/space.png" alt="Boost C++ Libraries"
+              class="heading-logo" /> <span class="heading-boost">Boost</span> <span class="heading-cpplibraries">C++
+              Libraries</span>
+            <!-- Removing the next line, deletes the Preliminary text in the decoration od the top odf the page --> <img
+              src="img/preliminary.gif" alt="Preliminary" style="width: 300px; height: 80px;" /> </a></h1>
+        <p class="heading-quote"> <q>...one of the most highly regarded and expertly designed C++ library projects in
+            the world.</q> <span class="heading-attribution">— <a href="http://www.gotw.ca/" class="external">Herb
+              Sutter</a> and <a href="http://en.wikipedia.org/wiki/Andrei_Alexandrescu" class="external">Andrei
+              Alexandrescu</a>, <a href="http://safari.awprofessional.com/?XmlId=0321113586" class="external">C++
+              Coding Standards</a></span></p>
+      </div>
+      <!--  div heading-inner--> </div>
+    <!-- - div  heading -->
+    <div class="clear"></div>
+    <!--*******************************************************************************************************-->
+    <!--                       T E X T   O F      T H E     P A G E                                            -->
+    <!--*******************************************************************************************************-->
+    <div class="cuerpo_central">
+      <div class="cuerpo_texto"> <br />
+        <br />
+        <span style="font-size: 32pt;"> <span style="font-weight: bold; color: black;"> <a href="index.html">The [
+              Counter Tree + Suballocator ] Library</a> </span></span><br />
+        <div>
+          <div class="author">
+            <h3 class="author"><br />
+              <span class="firstname"></span></h3>
+            <h3 class="author" style="font-style: italic;"><span class="firstname">Francisco Jose Tapia</span>  
+              Copyright © 2010-2012 Francisco Jose Tapia</h3>
+          </div>
+        </div>
+        <div>
+          <div class="legalnotice">
+            <p><span style="font-style: italic;">Distributed under the Boost Software License, Version 1.0. (See
+                accompanying file LICENSE_1_0.txt or copy at </span><a target="_top" href="file:///LICENSE_1_0.txt" style="font-style: italic;">
+                http://www.boost.org/LICENSE_1_0.txt </a><span style="font-style: italic;">)</span> </p>
+          </div>
+        </div>
+        <br />
+        <br />
+    <!--*******************************************************************************************************-->
+    <!--                                     M E N U                                                           -->
+    <!--*******************************************************************************************************-->        
+        <div class="caja_menu"> <span style="font-weight: bold;"><br />
+          </span><span style="font-size: 16pt;font-weight: bold; color: black;">Table of Contents</span> <br />
+          <br />
+          <div style="margin-left: 40px;"><a href="P4.0_suballocator.html">4.- Suballocators</a><br />
+          </div>
+          <div style="margin-left: 80px;">
+			<a href="P4.0_suballocator.html#problems">4.1.- Problems with allocators in Windows and Linux</a><br />
+            <a href="P4.0_suballocator.html#description"> 4.2.- Description of the Suballocators </a><br />
+            <a href="P4.3_suballocator_functions.html">4.3.- Functions of the Suballocators </a><br />
+            <a href="P4.4_suballocator_cnc_functions.html">4.4.- Functions of the Suballocators_cnc </a><br />
+            <a href="P4.5_suballocator_examples.html">4.5.- Examples </a><br />
+            <a href="P4.6_suballocator_benchmarks.html">4.6.- Benchmarks </a><br />
+            <div style="margin-left: 40px;">
+			  <a href="P4.6_suballocator_benchmarks.html#gcc">4.6.- Benchmark GCC 4.7</a><br />
+              <a href="P4.6_suballocator_benchmarks.html#vc++">4.6.- Benchmark VC++ 12CTP</a><br />
+              <a href="P4.6_suballocator_benchmarks.html#clang">4.6.- Benchmark CLANG 3.0</a></div>
+            <br />
+            <br />
+          </div>
+        </div>
+        <!--        Fin div caja_menu  -->
+        <br />
+        <br />
+        <!--*******************************************************************************************************-->
+        <!--                                                  B E N C H M A R K                                    -->
+        <!--*******************************************************************************************************-->
+        <p><a name="benchmark"></a> <span style="font-size: 18pt;font-weight: bold; color: black;">4.6.- Benchmarks
+            (GCC 4.7, VC++ 10, CLANG 3.0) </span></p>
+        <br />
+        The test had been done with  GCC 4.7 (64 bits) and run on a QuadCore 2.4 GHz ( 8 GB of Dual Channel 1066 MHz
+        Memory) with the C++0x options activated, and with the highest level of optimization.<br />
+        <span style="font-weight: bold;">IMPORTANT!</span> The results of the benchmarks have a great dependency of the
+        processor, and the size of the cache. <br />
+        <br />
+        <span style="font-weight: bold; text-decoration: underline;">Allocate 50.000.000 elements of uint64_t</span><br />
+        <br />
+        The benchmark of the suballocator is a vector of pointers to elements uint64_t. The size of the vector is
+        50.000.000 elements. This vector is obtained from dynamic memory, and is used for to link the elements obtained
+        from the allocator.The allocator is selected from a menu .<br />
+        The left graph shows the time of the 5 operations over the allocator . We take the time with the function <span
+          style="font-weight: bold;">clock( )</span>
+        <ol style="margin-left: 40px;">
+          <li>Allocate 50000000 elements of 64 bits</li>
+          <li>Deallocate all from the last to the first</li>
+          <li>Deallocate all from the first to the last</li>
+          <li>Deallocate odd elements</li>
+          <li>Deallocate odds elements and reallocate </li>
+        </ol>
+        <br />
+        The right  graph shows the memory used by the program in 3 moments:<br />
+        <ol style="margin-left: 40px;">
+          <li>The vector of pointers had been created and 50.000.000 elements uint64_t allocated</li>
+          <li>The vector of pointers had been created and 50.000.000 elements uint64_t had been deallocated</li>
+          <li>The vector of pointers had been deleted and 50.000.000 elements uint64_t had been deallocated</li>
+        </ol>
+        <br />
+        This second graph shows the memory consumption, and the capability of the allocators for to return memory to the
+        operating system and decrease the memory used by the program <br />
+        <br />
+        <br />
+        <span style="font-weight: bold; text-decoration: underline;">Allocate 30.000.000 elements uint64_t and insert in
+          a std::set</span><br />
+        <br />
+        The second Benchmark is the insertion of several collections of 30.000.000 numbers of 64 bits in a std::tree.
+        You select the allocator from a menu <br />
+        <p> <span style="font-weight: bold;">This graph is very important</span>, because show other important property
+          of the allocators. The time spend  by the allocator in the insertion of a number in the set is less than 1%.
+          As you can see  we  save around 35%.of the time  The allocator always provide the first position free. This
+          provide us a very compact data area, and this improve the cache performance.</p>
+        <p><br />
+        </p>
+        <p>The left graph is the time consumed, and the right is the memory used by the allocator when the 30.000.000
+          elements are allocated , and after when are freed, and the std::set is empty. This shows the memory
+          consumption, and the capability of the allocators for to return memory to the operating system and decrease
+          the memory used by the program </p>
+        * The source code of malloc_allocator, mt_allocator and pool_allocator is in a directory of the GCC compiler (<span
+          style="font-style: italic;"> In my computer /usr/include/c++/4.7/ext</span>). Check if your CLANG compiler
+        access to this directory, for to compile the benchmark programs <br />
+        <br />
+        <br />
+        <p><a name="gcc"></a> <span style="font-size: 18pt;font-weight: bold; color: black;">4.6.1.-
+            Benchmarks GCC 4.7 </span></p>
+        <br />
+        <br />
+        <br />
+        <img src="img/benchmark_allocator_GCC.png" alt="" title="BENCHMARK ALLOCATOR GCC" longdesc="img/benchmark_allocator_GCC.png" /><br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <img src="img/benchmark_set_allocator_GCC.png" alt="" title="BENCHMARK SET ALLOCATOR GCC" /><br />
+        <br />
+        <br />
+        <br />
+        <p><a name="vc++"></a> <span style="font-size: 18pt;font-weight: bold; color: black;">4.6.2.- Benchmarks 
+            VC++ 12CTP </span></p>
+        <br />
+        <img src="img/benchmark_allocator_VC10.png" alt="" title="BENCHMARK ALLOCATOR VC10" /><br />
+        <br />
+          <img src="img/benchmark_set_allocator_VC10.png" alt="" title="BENCHMARK SET ALLOCATOR VC10" /><br />
+        <br />
+        <br />
+        <p><a name="clang"></a> <span style="font-size: 18pt;font-weight: bold; color: black;">4.6.3.- Benchmarks
+            CLANG 3.3 </span></p>
+        <br />
+        <img src="img/benchmark_allocator_CLANG.png" alt="" title="BENCHMARK ALLOCATOR CLANG" /><br />
+        <br />
+        * The source code of malloc_allocator, mt_allocator and pool_allocator is in a directory of the GCC compiler (<span
+          style="font-style: italic;"> In my computer /usr/include/c++/4.7/ext</span>). Check if your CLANG compiler
+        access to this directory, for to compile the benchmark programs <br />
+        <br />
+        <img src="img/benchmark_set_allocator_CLANG.png" alt="" title="BENCHMARK SET ALLOCATOR CLANG" /><br />
+        <br />
+    <!--*******************************************************************************************************  -->
+    <!--                             I C O N O S   P A R T E   I N F E R I O R                                  -->
+    <!--*******************************************************************************************************  -->    
+        <a title="documentation" href="P5.0_documentation.html" style="float:right"><img alt="next page" src="img/next.png" /></a> 
+        <a title="home page" href="P4.0_suballocator.html" style="float:right"><img alt="go to head of the page" src="img/up.png" /></a> 
+        <a title="suballocator examples" href="P4.5_suballocator_examples.html" style="float:right"><img src="img/prev.png" alt="previous page" /></a> 
+        <a title="home" href="index.html" style="float:right"><img  src="img/home.png" alt="home page" /></a>
+        <br />
+      </div>
+    </div>
+    <!--*******************************************************************************************************-->
+    <!--                    T A B L A    I N F E R I O R   D E   L A    P A G I N A                            -->
+    <!--*******************************************************************************************************-->
+    <table width="100%" xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision">
+      <tbody>
+        <tr>
+          <td align="left">
+            <p><small>Last revised: April  16, 2012 <br />
+              </small></p>
+          </td>
+          <td align="right"> <br />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <div class="box-bottom"></div>
+    <!-- div cuerpo_texto -->
+    <div class="clear"></div>
+    <!-- div cuerpo central -->
+    <!--  div body -->
+    <!--*******************************************************************************************************-->
+    <!--                                      F O O T E R                                                      -->
+    <!--*******************************************************************************************************-->
+    <div id="footer">
+      <div id="footer-left">
+        <div id="copyright">
+          <p>Copyright Francisco Jose Tapia 2010- 2012.</p>
+        </div>
+        <div id="license">
+          <p>Distributed under the <a href="/LICENSE_1_0.txt" class="internal">Boost Software License, Version 1.0</a>.</p>
+        </div>
+      </div>
+      <div id="footer-right">
+        <div id="banners">
+          <p id="banner-xhtml"> <a href="http://validator.w3.org/check?uri=referer" class="external">XHTML 1.0</a></p>
+          <p id="banner-css"> <a href="http://jigsaw.w3.org/css-validator/check/referer" class="external">CSS</a></p>
+          <p id="banner-osi"> <a href="http://www.opensource.org/docs/definition.php" class="external">OSI Certified</a></p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </body>
+</html>

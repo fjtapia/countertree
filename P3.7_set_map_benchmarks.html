@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta content="HTML Tidy for Windows (vers 1st November 2003), see www.w3.org" name="generator" />
+    <title>Boost C++ Libraries</title>
+    <link type="image/ico" href="http://www.boost.org/favicon.ico" rel="icon" />
+    <link href="http://www.boost.org/style-v2/section-welcome.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="files/code.css" />
+    <!--[if IE 7]> <style type="text/css"> body { behavior: url(http://www.boost.org/style-v2/csshover3.htc); } </style> <![endif]-->
+    <meta content="mpr2HgFpodnbF_8fv4qXd9roIClVwtX3C-Kd3F6r61w" name="google-site-verification" />
+  </head>
+  <!-- Note: Editing website content is documented at:http://www.boost.org/development/website_updating.html -->
+  <!--***************************************************************************************** -->
+  <!--                                     B O D Y                                              -->
+  <!--***************************************************************************************** --> <body>
+    <div id="heading">
+      <div class="heading-inner">
+        <h1 class="heading-title"> <a href="http://www.boost.org/"> <img class="heading-logo" alt="Boost C++ Libraries"
+              src="http://www.boost.org//gfx/space.png" /> <span class="heading-boost">Boost</span> <span class="heading-cpplibraries">C++
+              Libraries</span>
+            <!-- Removing the next line, deletes the Preliminary text in the decoration od the top odf the page --> <img
+              style="width: 300px; height: 80px;" alt="Preliminary" src="img/preliminary.gif" /> </a></h1>
+        <p class="heading-quote"> <q>...one of the most highly regarded and expertly designed C++ library projects in
+            the world.</q> <span class="heading-attribution">— <a class="external" href="http://www.gotw.ca/">Herb
+              Sutter</a> and <a class="external" href="http://en.wikipedia.org/wiki/Andrei_Alexandrescu">Andrei
+              Alexandrescu</a>, <a class="external" href="http://safari.awprofessional.com/?XmlId=0321113586">C++
+              Coding Standards</a></span></p>
+      </div>
+      <!--  div heading-inner--> </div>
+    <!-- - div  heading -->
+    <!--***************************************************************************************** -->
+    <!--                      T E X T   O F      T H E     P A G E                                -->
+    <!--***************************************************************************************** -->
+    <div class="cuerpo_central">
+      <div class="cuerpo_texto">
+        <!--***************************************************************************************** -->
+        <!--                       M E N U     P R I N C I P A L                                      -->
+        <!--***************************************************************************************** --> <br />
+        <br />
+        <span style="font-size: 24pt;"> <span style="font-weight: bold; color: black;"> <a href="index.html">The [
+              Counter Tree + Suballocator ] Library</a> </span></span><br />
+        <div>
+          <div class="author">
+            <h3 class="author"><br />
+              <span class="firstname"></span></h3>
+            <h3 style="font-size: 10pt; font-style: italic; font-weight: bold" class="author"> <span style="font-weight: bold;"><span
+                  class="firstname" style="font-weight: bold;">Francisco Jose Tapia</span>   Copyright © 2010-2013
+                Francisco Jose Tapia</span></h3>
+          </div>
+        </div>
+        <div class="legalnotice">
+          <p><span style="font-size: 10pt; font-style: italic; font-weight: bold">Distributed under the Boost Software
+              License, Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at <a href="file:///LICENSE_1_0.txt"
+                target="_top"> http://www.boost.org/LICENSE_1_0.txt )</a></span> </p>
+        </div>
+        <br />
+        <br />
+        <div class="caja_menu"> <br />
+          <span style="font-size: 16pt;font-weight: bold; color: black;">Table of Contents</span><br />
+          <br />
+          <div style="margin-left: 40px;"> <a href="P3.0_set_map.html">3.- Ordered elements </a> <span class="texto_codigo">(countertree
+              set, multiset, map and multimap)</span> </div>
+          <div style="margin-left: 80px;"> <a href="P3.0_set_map.html#description">3.1.- Description</a><br />
+            <a href="P3.2_set_functions.html#functions">3.2.- set functions </a><br />
+            <a href="P3.3_multiset_functions.html#functions">3.3.- multiset functions </a><br />
+            <a href="P3.4_map_functions.html#functions">3.4.- map functions  </a><br />
+            <a href="P3.5_multimap_functions.html#functions">3.5.- multimap functions </a><br />
+            <a href="P3.6_set_map_examples.html#examples">3.6.- Examples</a><br />
+            <a href="P3.7_set_map_benchmarks.html#benchmarks">3.7.- Benchmarks </a><br />
+            <div style="margin-left: 40px;"> <a href="P3.7_set_map_benchmarks.html#gcc">3.7.1.- Benchmarks GCC 4.7</a><br />
+              <a href="P3.7_set_map_benchmarks.html#vc++">3.7.2.- Benchmarks VC++12CTP</a><br />
+              <a href="P3.7_set_map_benchmarks.html#clang">3.7.3.- Benchmarks CLANG 3.3</a><br />
+              <br />
+            </div>
+          </div>
+        </div>
+        <!--                         Fin div caja_menu                                                         --> <br />
+        <br />
+        <!--***************************************************************************************** -->
+        <!--                      D E S C R I P T I O N                                               -->
+        <!--***************************************************************************************** --><br />
+        <br />
+        <!--***************************************************************************************** -->
+        <!--                                       B E N C H M A R K S                                 -->
+        <!--***************************************************************************************** -->
+        <p><a name="benchmarks"></a> <span style="font-size: 16pt;font-weight: bold; color: black;">3.7.- Benchmarks
+            (GCC 4.7, VC++ 10, CLANG 3.0) </span></p>
+        <p> </p>
+        The next graphs show you the time comparing the  <span style="font-weight: bold;">std::set, countertree::set,
+          and countertree_set_pool</span>, and the <span style="font-weight: bold;">std::multiset,
+          countertree::multiset and countertree::multiset_pool</span> Take consideration that the countertree structures
+        are more complex than the STL structures due to they must manage not only the pointers, they must manage too the
+        counters of the nodes, which permit the access by position.<br />
+        <br />
+        This Benchmark is the insertion of several collections of 30.000.000 numbers of 64 bits in the Data Structure
+        selected from from a menu <br />
+        <p> <span style="font-weight: bold;"><br />
+          </span></p>
+        <p>The left graph is the time consumed, and the right is the memory used by the allocator when the 30.000.000
+          elements are allocated , and after when are freed, and the std::set is empty. This shows the memory
+          consumption, and the capability of the allocators for to return memory to the operating system and decrease
+          the memory used by the program </p>
+        <p><br />
+        </p>
+        <br />
+        <a name="gcc"></a> <span style="font-size: 16pt;font-weight: bold; color: black;">3.7.1.- Benchmarks GCC 4.7</span><br />
+          <img src="img/benchmark_set_GCC.png" alt="" /><br />
+        <br />
+        <br />
+        <a name="vc++"></a> <span style="font-size: 16pt;font-weight: bold; color: black;">3.7.2.- Benchmarks VC++
+          12CTP</span><br />
+        <img src="img/benchmark_set_VC10.png" alt="" /><br />
+        <br />
+        <br />
+        <a name="clang"></a> <span style="font-size: 16pt;font-weight: bold; color: black;">3.7.3.- Benchmarks CLANG
+          3.3</span><br />
+        <img src="img/benchmark_set_CLANG.png" alt="" /><br />
+        <br />
+        <br />
+        The benchmark had been done with 64 bits integers, inserting several collections of 30.000.000 elements.
+        <p>The test had been done with  GCC 4.7 (64 bits) and run on a QuadCore 2.4 GHz ( 8 GB of Dual Channel 1066 MHz
+          Memory) with the C++0x options activated, and with the highest level of optimization. <br />
+        </p>
+        <br />
+        <span style="font-weight: bold; color: black; text-decoration: underline;">FUTURE IMPROVEMENTS :</span><span style="text-decoration: underline;">
+        </span><br />
+        <br />
+        <ul>
+          <li>The next version,  I will have a deep redesign of the counter_tree and the algorithms related in order to
+            improve the speed. </li>
+          <li>Add support for the rvalues for to improve the speed of copy and movement operations</li>
+          <li>Add thread safe options with atomic variables of the new C++11. In a near future we will see many core
+            processors, and this data structure permit the collaborative work of all the cores in the same operation, as
+            search sequentially in a map for a non indexed part of the information. You can assign a range of nodes to
+            each core, and all work together resolving the same problem.</li>
+        </ul>
+        <br />
+        
+    <!--*******************************************************************************************************  -->
+    <!--                             I C O N O S   P A R T E   I N F E R I O R                                  -->
+    <!--*******************************************************************************************************  -->    
+        <a title="suballocators" href="P4.0_suballocator.html" style="float:right"><img alt="next page" src="img/next.png" /></a> 
+        <a title="home page" href="P3.0_set_map.html" style="float:right"><img alt="go to head of the page" src="img/up.png" /></a> 
+        <a title="set map examples" href="P3.6_set_map_examples.html" style="float:right"><img src="img/prev.png" alt="previous page" /></a> 
+        <a title="home" href="index.html" style="float:right"><img  src="img/home.png" alt="home page" /></a>
+      </div>
+    </div>
+    <!--***************************************************************************************** -->
+    <!--                T A B L A    I N F E R I O R   D E   L A    P A G I N A                   -->
+    <!--***************************************************************************************** -->
+    <table width="100%" xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision">
+      <tbody>
+        <tr>
+          <td align="left">
+            <p><small>Last revised: September  08, 2010 at 21:42:41 GMT</small></p>
+          </td>
+          <td> <br />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <!-- div cuerpo_texto -->
+    <!-- div cuerpo central -->
+    <!--  div body -->
+    <!--***************************************************************************************** -->
+    <!--                                      F O O T E R                                         -->
+    <!--***************************************************************************************** -->
+    <div id="footer">
+      <div id="footer-left">
+        <div id="copyright">
+          <p>Copyright Francisco Jose Tapia 2010 - 2012.</p>
+        </div>
+        <div id="license">
+          <p>Distributed under the <a class="internal" href="/LICENSE_1_0.txt">Boost Software License, Version 1.0</a>.</p>
+        </div>
+      </div>
+      <div id="footer-right">
+        <div id="banners">
+          <p id="banner-xhtml"> <a class="external" href="http://validator.w3.org/check?uri=referer">XHTML 1.0</a></p>
+          <p id="banner-css"> <a class="external" href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a></p>
+          <p id="banner-osi"> <a class="external" href="http://www.opensource.org/docs/definition.php">OSI Certified</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

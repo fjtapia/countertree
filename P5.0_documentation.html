@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="HTML Tidy for Windows (vers 1st November 2003), see www.w3.org"
+      name="generator" />
+    <title>Boost C++ Libraries</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <link type="image/ico" href="http://www.boost.org/favicon.ico" rel="icon" />
+    <link href="http://www.boost.org/style-v2/section-welcome.css" type="text/css"
+      rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="files/code.css" />
+    <!--[if IE 7]> <style type="text/css"> body { behavior: url(http://www.boost.org/style-v2/csshover3.htc); } </style> <![endif]-->
+    <meta content="mpr2HgFpodnbF_8fv4qXd9roIClVwtX3C-Kd3F6r61w" name="google-site-verification" />
+  </head>
+  <!-- Note: Editing website content is documented at:http://www.boost.org/development/website_updating.html-->
+  <!--***************************************************************************************** -->
+  <!--                                        B O D Y                                           -->
+  <!--***************************************************************************************** -->
+  <body>
+    <div id="heading">
+      <div class="heading-inner">
+        <div class="heading-placard"></div>
+        <h1 class="heading-title"> <a href="http://www.boost.org/"> <img class="heading-logo"
+              alt="Boost C++ Libraries" src="http://www.boost.org//gfx/space.png" />
+            <span class="heading-boost">Boost</span> <span class="heading-cpplibraries">C++
+              Libraries</span> <img style="width: 300px; height: 80px;" alt="Preliminary"
+              src="img/preliminary.gif" /> </a></h1>
+        <p class="heading-quote"> <q>...one of the most highly regarded and
+            expertly designed C++ library projects in the world.</q> <span class="heading-attribution">—
+            <a class="external" href="http://www.gotw.ca/">Herb Sutter</a> and <a
+              class="external" href="http://en.wikipedia.org/wiki/Andrei_Alexandrescu">Andrei
+              Alexandrescu</a>, <a class="external" href="http://safari.awprofessional.com/?XmlId=0321113586">C++
+              Coding Standards</a></span></p>
+      </div>
+    </div>
+    <div class="clear"> </div>
+    <div class="cuerpo_central"> <br />
+      <div class="cuerpo_texto"> <br />
+        <span style="font-size: 32pt;"> <span style="font-weight: bold; color: black;">
+            <a href="index.html">The [ Counter Tree + Suballocator ] Library</a>
+          </span></span><br />
+        <div>
+          <div class="author">
+            <h3 class="author"><br />
+              <span class="firstname"></span></h3>
+            <h3 class="author" style="font-style: italic;"><span class="firstname">Francisco
+                Jose Tapia</span>   Copyright © 2010-2012 Francisco Jose Tapia</h3>
+          </div>
+        </div>
+        <div>
+          <div class="legalnotice">
+            <p><span style="font-style: italic;">Distributed under the Boost
+                Software License, Version 1.0. (See accompanying file
+                LICENSE_1_0.txt or copy at </span><a target="_top" href="file:///LICENSE_1_0.txt"
+                style="font-style: italic;">
+                http://www.boost.org/LICENSE_1_0.txt </a><span style="font-style: italic;">)</span>
+            </p>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="caja_menu"> <span style="font-size: 16pt;font-weight: bold; color: black;"><br />
+            Table of Contents</span> <br />
+          <br />
+          <div style="margin-left: 40px;">
+            <div style="margin-left: 40px;"><a href="index.html#Introduction">1.-
+                Introduction</a><br />
+              <div style="margin-left: 40px;"><a href="index.html#countertree">1.1.-
+                  Description of the Counter Trees</a><br />
+                <a href="index.html#suballocator">1.2.- Description of the
+                  Suballocators </a><br />
+                <a href="index.html#pool">1.3.- Description of Counter Trees +
+                  Suballocators </a><br />
+              </div>
+            </div>
+            <div style="margin-left: 40px;"> <br />
+              <a href="unordered.html">2.- Counter Trees with unordered elements
+                ( <span class="texto_codigo">countertree::vector_tree</span>)</a>
+              <br />
+              <div style="margin-left: 40px;"><a href="unordered.html#unordered">2.1.-
+                  Description</a><br />
+                <a href="unordered.html#iterators">2.2.- Iterators </a><br />
+                <a href="unordered.html#examples">2.3.- Examples</a><br />
+                <a href="unordered.html#benchmarks">2.4.- Benchmarks</a><br />
+              </div>
+              <br />
+              <a href="ordered.html">3.- Ordered elements ( <span class="texto_codigo">countertree
+                  set,multiset,map and multimap</span>)</a>
+              <div style="margin-left: 40px;"><a href="ordered.html#description">3.1.-
+                  Description</a><br />
+                <a href="ordered.html#iterators">3.2.- Iterators </a><br />
+                <a href="ordered.html#functionality">3.3.- Additional
+                  functionality</a><br />
+                <a href="ordered.html#examples">3.4.- Examples</a><br />
+                <a href="ordered.html#examples"> </a><a href="ordered.html#benchmarks">3.5.-
+                  Benchmarks ( GCC 4.7, VC++10, CLANG 3.0)</a><a href="ordered.html#description"></a>
+              </div>
+              <br />
+              <a href="suballocator.html">4.- Suballocators</a> <br />
+              <div style="margin-left: 40px;"><a href="suballocator.html#problems">4.1.-
+                  Problems with allocators in Windows and Linux</a><br />
+                <a href="suballocator.html#description">4.2.- Description of the
+                  Suballocators</a><a href="suballocator.html#algorithms"></a><br />
+                <a href="suballocator.html#examples">4.3.- Examples </a><br />
+                <a href="suballocator.html#benchmark">4.4.- Benchmark ( GCC 4.7,
+                  VC++ 10, CLANG 3.0)</a><br />
+                <a href="The_Suballocator_Algorithms.pdf"></a><br />
+              </div>
+              5.- Documentation of the code<br />
+              <div style="margin-left: 40px;"><a href="html/files.html">5.1.-
+                  Source code</a><br />
+                <a href="The_Suballocator_Algorithms.pdf" target="_parent">5.2.-
+                  Algorithm description of the Suballocator</a><br />
+              </div>
+              <br />
+            </div>
+          </div>
+          <div style="margin-left: 80px;"><a title="countertree_1.0.zip" href="countertree_1.0.zip">6.-
+              Download</a><br />
+          </div>
+          <br />
+          <br />
+        </div>
+        <br />
+        <br />
+        <p><a name="Introduction"></a> <span style="font-size: 18pt;font-weight: bold; color: black;">1.-
+            Introduction</span></p>
+        <p> </p>
+        <p>The goal of this library is to improve and extend the functionality
+          of existing and well know tools of C++. The library provide you
+          simplicity, versatility and speed in your code with a minimal effort
+          for to learn and use.<br />
+        </p>
+        <p>If you know the STL classes vector, set , multiset, map , multimap
+          and allocator, you know more than 95% needed for to use this library.</p>
+        <p> </p>
+        <p>This project is the joining of two separate ideas, the countertrees
+          and the suballocators. Each one have it own sense and utility. But
+          they are complementarity, and working joined express the goal of this
+          project, providing tools for to improve the user's work.</p>
+        <br />
+        <br />
+        <p></p>
+        <p><a name="countertree"></a> <span style="font-size: 18pt;font-weight: bold; color: black;">1.1.-
+            Description of the Counter Trees</span></p>
+        <img align="left" alt="Example of Counter Tree" style="border:15px solid white"
+          src="img/physic-logic.png" />
+        <p> </p>
+        <p>The counter trees are trees where each node have an additional
+          counter. This counter represent the number of nodes under it,
+          including itself. This counter permit us to access to the elements by
+          the position, in the same way than a vector. It is a random access
+          container and, of course, random access iterators.</p>
+        <p> </p>
+        <p>This library is an implementation of a binary balanced counter tree
+          with pointers to the first and last elements . It is red-black with an
+          additional counter en each leaf. I didn't find any implementation of
+          the binary Counter Trees, except my version of 14 years ago. Due this,
+          <span style="font-weight: bold;">all the algorithms for insert,
+            delete, sort, find and balance was created and developed
+            specifically for this project, and they are not based in any
+            previous code or implementation.</span></p>
+        <br />
+        The basic idea of this class is simple, you can use like a vector. It
+        permit access to the elements by their position. The allocators are
+        random access, like in a vector. The insertion or deletion of one
+        element don't imply any movement of data. It's only insertion or
+        deletion of a node in the tree. <span style="font-weight: bold;">The
+          operations of  insertion, deletion and access to elements are
+          O(log(N)) operations.</span>
+        <p> </p>
+        <p>The elements in the Counter Tree can be ordered or unordered.</p>
+        <p><br />
+        </p>
+        <p>With <span style="font-weight: bold;">unordered elements</span>, you
+          have a <span style="font-weight: bold;">countertree::vector_tree</span>.
+          This is like a vector with identical interface, identical operations
+          than std::vector and std::deque . This vector_tree have the same speed
+          inserting or deleting in any position of the vector.  The difference
+          is the performance. The <span style="font-weight: bold;">std::vector</span>
+          it is very fast inserting and deleting in the first or in the last
+          position, but very slow if you must insert or delete in central
+          positions. The <span style="font-weight: bold;">countertree::vector_tree</span>
+          is slower than the std::vector inserting or deleting in the first and 
+          last position, but  much more faster inserting in central positions.</p>
+        <ul style="margin-left: 40px;">
+        </ul>
+        <p><br />
+        </p>
+        With <span style="font-weight: bold;">ordered elements</span>, you have
+        the classes <span style="font-weight: bold;"> countertree::set,
+          countertree::multiset, countertree::map and countertree::multimap</span>.
+        They have the same interface than the STL std::set, std::multiset,
+        std::map,std::multimap classes, plus the capacity of access to the
+        elements by the position like in a vector<br />
+        <br />
+        The iterators are random access. You can subtract two iterators for to
+        know the number of elements between them. <br />
+        <br />
+        <br />
+        <p><a name="suballocator"></a> <span style="font-size: 16pt;font-weight: bold; color: black;">1.2.-
+            Description of the Suballocators</span></p>
+        <p> <br />
+        </p>
+        <p>Many STL data structures need to allocate and deallocate a big number
+          of elements of fixed size. The allocator is the data structure defined
+          in the STL, as interface between the data structures and the memory
+          provided by the Operating System (O.S.). The allocator manages the
+          memory received from the Operating System, and the memory requested in
+          the allocate operations and the memory returned in the deallocate
+          operations. </p>
+        <p><br />
+        </p>
+        <p>The allocators have 4 problems :</p>
+        <ol style="margin-left: 40px;">
+          <li>The <span style="font-weight: bold;">speed</span> of the
+            allocation and deallocation<br />
+          </li>
+          <li>The <span style="font-weight: bold;">memory consumption</span>.
+            Many allocators, when allocate one elements, allocate too,
+            additional information for the deallocating. This increase the size
+            of the memory used, and we can find that the same set of elements
+            need a 50% more memory in GCC than in Visual C++ 10. <br />
+          </li>
+          <li>Many allocators <span style="font-weight: bold;">don't return
+              well the unused chucks of memory</span> to the Operating System 
+            and the memory  used by the allocator is the maximum used and never
+            decrease. If you have a small number of elements, you have a small
+            problem, small resources and small time operations. But, if you have
+            several millions of elements allocated, perhaps you are using
+            several GB of memory. Running a program with GB of memory don't
+            used, because the allocator don't return the memory request, is a
+            great waste of resources. </li>
+          <li>The last problem is the <span style="font-weight: bold;">cache
+              performance</span>. If the elements allocated are dispersed, you
+            obtain a poor cache allocation, and poor performance. The difference
+            can be until 30% of the time This effect is named as data locality
+            improvement. </li>
+        </ol>
+        <p><br />
+        </p>
+        The <span style="font-weight: bold;">suballocator is a solution to
+          these problems</span>. The suballocator is a layer between the
+        allocator and the data structures, compatible with any allocator with
+        the STL definition. The suballocator request memory to the allocator,
+        and return to it when unused. <br />
+        <br />
+        <img src="img/paso2.png" alt="Diagram of the suballocator" /><br />
+        <br />
+        <p><img align="left" src="img/suballocator.png" alt="Suballocator memory diagram"
+            style="width: 384px; height: 355px; border: 15px solid white;" /><br />
+        </p>
+        With the suballocator <br />
+        <br />
+        <div style="margin-left: 40px;"> a) <span style="font-weight: bold;">We
+            have a very fast allocation</span> <span style="color: #0000a0; font-style: italic;">(around 
+            2 times faster than the  std::allocator of  GCC 4.7, CLANG 3.0  and 
+            3 times than Visual Studio 10 *See details in the <a href="suballocator.html#benchmark">Suballocator
+              Benchmark</a>)</span><span style="font-style: italic;"> </span><br />
+          <br />
+          b) <span style="font-weight: bold;">Return memory to the allocator,
+            for to be used by others types of data</span>. The unused memory is
+          returned to the allocator ant to the Operating System decreasing the
+          memory used by the program,<span style="font-style: italic;"> </span><span
+            style="color: #0000a0; font-style: italic;">( as you can see in the
+            <a href="suballocator.html#benchmark">Suballocator Benchmark  </a>)</span><span
+            style="font-style: italic;"> </span><br />
+          <br />
+          c) <span style="font-weight: bold;">You can use with any allocator if
+            it is according with the STL definition</span>. The suballocator
+          provides speed and memory management to any allocator . You can use
+          with the STL list, set, multiset, map and multimap, and with any other
+          data structure with fixed size elements allocation. <br />
+        </div>
+        <br />
+        d) When the data structure allocate a chuck of memory, <span style="font-weight: bold;">the
+          suballocator don't add any other additional information</span> ( for
+        to allocate 50.000.000 uint64_t elements, the GCC allocator use 1.95
+        Gigas of memory. The same with the suballocator need 0.92 Gigas of
+        memory)<br />
+        <br />
+        e) <span style="font-weight: bold;">The improvement in the cache
+          performance</span>. The time obtained by the std::set + suballocator,
+        compared with a std::set, in the same benchmark is around 30% - 40%
+        lower. <br />
+        <br />
+        <br />
+        <p><a name="pool"></a> <span style="font-size: 16pt;font-weight: bold; color: black;">1.3.-
+            Description of Counter Trees + Suballocators</span></p>
+        <p> </p>
+        The next step is to join the two previous concepts.
+        <p> </p>
+        The idea is to integrate the suballocator inside the data structure.
+        With this, you have data structures, with identical interface than the
+        STL structures with the same name, but with an internal pool, which
+        increase the speed of the data structure, and return memory to the
+        allocator and the Operating System when don't use. <br />
+        <br />
+        You have the more speed than the STL data structures and more memory
+        control with the easy use of the STL data structures.<br />
+        <br />
+        With this, we have, in the namespace countertree, the classes
+        vector_tree_pool, set_pool, multiset_pool, map_pool and multimap_pool,
+        which are the data structures with the suballocator integrated.<br />
+        <br />
+        <img align="justify" alt="Example of Allocator" src="img/paso3.png" /> <br />
+      </div>
+      <br />
+      <br />
+      <a style="float:right" href="unordered.html" title="unordered.html"><img src="img/next.png"
+          alt="link to unordered page" /></a> <a style="float:right" href="index.html"
+        title="index.html"><img src="img/up.png" alt="go to head of the page" /></a> 
+      <table width="100%" xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision">
+        <tbody>
+          <tr>
+            <td align="left">
+              <p><small>Last revised: September  30, 2012 at 21:42:41 GMT</small></p>
+            </td>
+            <td align="right"> <br />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <div class="box-bottom"></div>
+      <div class="clear"></div>
+      <div id="footer">
+        <div id="footer-left">
+          <div id="copyright">
+            <p>Copyright Francisco Jose Tapia 2010-2012.</p>
+          </div>
+          <div id="license">
+            <p>Distributed under the <a class="internal" href="/LICENSE_1_0.txt">Boost
+                Software License, Version 1.0</a>.</p>
+          </div>
+        </div>
+        <div id="footer-right">
+          <div id="banners">
+            <p id="banner-xhtml"> <a class="external" href="http://validator.w3.org/check?uri=referer">XHTML
+                1.0</a></p>
+            <p id="banner-css"> <a class="external" href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a></p>
+            <p id="banner-osi"> <a class="external" href="http://www.opensource.org/docs/definition.php">OSI
+                Certified</a></p>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </body>
+</html>
